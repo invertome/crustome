@@ -6,11 +6,22 @@ Transcriptomes from non-traditional model organisms often harbor a wealth of une
 ## Searching CrusTome using BLAST
 
 The following example consists of a recursive BLAST search to identify putative matches to our query sequences, align protein sequences using MAFFT-DASH, trim alignment to keep informative sites using ClipKit, infer phylogenies using IQtree2 (both trimmed and untrimmed alignments), prune long branches from phylogenies using TreeShrink, and a final phylogenetic inference with IQtree2. This pipeline will result in a decent starting point to phylogenetically characterize sequences of interest.
+
 The present example uses iterative BLAST searches to refine and expand the search hits for better phylogenetic inference. This type of searches can be made in a more succint and efficient way using PSI-BLAST, which after an initial blastp search computes a position-specific scoring matrix (PSSM) used for subsequent search iterations. However, we decided to include this longer example as a starting point since it allows for the exploration of intermediary results and the optimization of parameters for specific use cases. Once this has been optimized, a PSI-BLAST search can be used in later searches for simplicity (and specificity gains from using a PSSM). If homologous sequences are difficult to find via BLAST due to sequence divergence, an alternative HMM strategy is proposed.
 
 
 
 ### EXAMPLE ANALYSIS 1 - Iterative BLAST searches -> Phylogenetic characterization
+
+Ensure that the following software is downloaded, installed, and available on your system via PATH or symlinks.
+
+Dependencies:
+  - NCBI BLAST (https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/)
+  - MAFFT (https://mafft.cbrc.jp/alignment/software/)
+  - ClipKIT 9https://pypi.org/project/clipkit/#files)
+  - IQ-TREE (http://www.iqtree.org/#download)
+  - TreeShrink (https://github.com/uym2/TreeShrink)
+
 ```
 ### REPLACE "project" with project name
 ### REPLACE "reference.fasta" with your input fasta file with reference sequences
