@@ -8,7 +8,10 @@ Transcriptomes from non-traditional model organisms often harbor a wealth of une
 The following example consists of a recursive BLAST search to identify putative matches to our query sequences, align protein sequences using MAFFT-DASH, trim alignment to keep informative sites using ClipKit, infer phylogenies using IQtree2 (both trimmed and untrimmed alignments), prune long branches from phylogenies using TreeShrink, and a final phylogenetic inference with IQtree2. This pipeline will result in a decent starting point to phylogenetically characterize sequences of interest.
 The present example uses iterative BLAST searches to refine and expand the search hits for better phylogenetic inference. This type of searches can be made in a more succint and efficient way using PSI-BLAST, which after an initial blastp search computes a position-specific scoring matrix (PSSM) used for subsequent search iterations. However, we decided to include this longer example as a starting point since it allows for the exploration of intermediary results and the optimization of parameters for specific use cases. Once this has been optimized, a PSI-BLAST search can be used in later searches for simplicity (and specificity gains from using a PSSM). If homologous sequences are difficult to find via BLAST due to sequence divergence, an alternative HMM strategy is proposed.
 
+
+
 ### EXAMPLE ANALYSIS 1 - Iterative BLAST searches -> Phylogenetic characterization
+```
 ### REPLACE "project" with project name
 ### REPLACE "reference.fasta" with your input fasta file with reference sequences
 ### REPLACE "/path/to/crustome/" with the path to where you extracted CrusTome's db files 
@@ -97,3 +100,4 @@ iqtree -s trees/project.trimmed/realigned.fasta -pre project.trimmed.final -nt 1
 ### "dict" file should be copied to the folder where this is run 
 cp /path/to/crustome/dict ./
 sed -f <(sed -E 's_(.+)\t(.+)_s/\1/\2/g_' dict) project.trimmed.final.treefile > project.trimmed.final.names.treefile
+```
