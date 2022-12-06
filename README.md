@@ -22,6 +22,8 @@ Dependencies:
   - IQ-TREE (http://www.iqtree.org/#download)
   - TreeShrink (https://github.com/uym2/TreeShrink)
 
+Example code:
+
 ```
 ### REPLACE "project" with project name
 ### REPLACE "reference.fasta" with your input fasta file with reference sequences
