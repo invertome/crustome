@@ -91,6 +91,7 @@ cut -d ' ' -f1 alignment.fa > aligned.fa
 clipkit aligned.fa -m smart-gap
 
 ### 16 - Infer phylogeny with iqtree2
+### Suggestion: Use different clipkit settings and infer a phylogeny for each trimmed alignment version
 iqtree -s aligned.fa.clipkit -pre project.trimmed -nt 10 -m TESTNEW -msub nuclear -bb 1000 -bnni -abayes
 iqtree -s aligned.fa -pre project -nt 10 -m TESTNEW -msub nuclear -bb 1000 -bnni -abayes
 
