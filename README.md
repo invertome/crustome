@@ -13,7 +13,7 @@ The present example uses iterative BLAST searches to refine and expand the searc
 
 ### EXAMPLE ANALYSIS 1 - Iterative BLAST searches -> Phylogenetic characterization
 
-Ensure that the following software is downloaded, installed, and available on your system via PATH or symlinks.
+Ensure that the following software dependencies are downloaded, installed, and available on your system via PATH or symlinks.
 
 Dependencies:
   - NCBI BLAST (https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/)
@@ -31,7 +31,7 @@ Example code:
 ### ADJUST evalues according to genes of interest
 ### ADJUST "-num_threads" "--thread" and "-nt" according to computational resources available
 ### ADJUST model for iqtree2 according to model-testing results
-### EXECUTE commands either line by line (recommended for beginners), as a script, or via a job scheduling system if on an HPC (e.g., SLURM, LSF).
+### EXECUTE commands either line by line (recommended for beginners), as a single script, or via a job scheduling system if on an HPC (e.g., SLURM, LSF).
 
 ### 1 - Initial search with reference sequences
 blastp -query reference.fasta -db /path/to/crustome/crustome_aa -num_threads 5 -max_target_seqs 1000 -evalue 1e-96 -outfmt "6 qseqid sseqid evalue bitscore pident nident qlen slen qstart qend sstart send length mismatch gapopen" -out hits.tsv
