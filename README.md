@@ -30,7 +30,7 @@ Example code:
 ### REPLACE "/path/to/crustome/" with the path to where you extracted CrusTome's db files 
 ### ADJUST evalues according to genes of interest
 ### ADJUST "-num_threads" "--thread" and "-nt" according to computational resources available
-### EXECUTE commands either line by line (recommended for beginners), as a script, or via a job scheduling system if on an HPC (e.g., SLURM).
+### EXECUTE commands either line by line (recommended for beginners), as a script, or via a job scheduling system if on an HPC (e.g., SLURM, LSF).
 
 ### 1 - Initial search with reference sequences
 blastp -query reference.fasta -db /path/to/crustome/crustome_aa -num_threads 5 -max_target_seqs 1000 -evalue 1e-96 -outfmt "6 qseqid sseqid evalue bitscore pident nident qlen slen qstart qend sstart send length mismatch gapopen" -out hits.tsv
