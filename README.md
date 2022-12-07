@@ -30,6 +30,7 @@ Example code:
 ### REPLACE "/path/to/crustome/" with the path to where you extracted CrusTome's db files 
 ### ADJUST evalues according to genes of interest
 ### ADJUST "-num_threads" "--thread" and "-nt" according to computational resources available
+### ADJUST model for iqtree2 according to model-testing results
 ### EXECUTE commands either line by line (recommended for beginners), as a script, or via a job scheduling system if on an HPC (e.g., SLURM, LSF).
 
 ### 1 - Initial search with reference sequences
