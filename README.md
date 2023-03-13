@@ -21,6 +21,9 @@ Dependencies:
   - ClipKIT 9https://pypi.org/project/clipkit/#files)
   - IQ-TREE (http://www.iqtree.org/#download)
   - TreeShrink (https://github.com/uym2/TreeShrink)
+  
+CrusTome Database:
+ - CrusTome v0.1.0 release is available at: https://doi.org/10.5281/zenodo.7730440
 
 Example code:
 
